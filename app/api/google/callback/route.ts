@@ -20,10 +20,6 @@ export async function GET(req: NextRequest) {
   console.log('✅ Gmail Access Token:', access_token);
   console.log('🔁 Gmail Refresh Token:', refresh_token);
 
-  return NextResponse.json({
-    message: 'Gmail connected successfully',
-    access_token,
-    refresh_token,
-    expires_in,
-  });
+  const origin = req.nextUrl.origin;
+  return NextResponse.redirect(`${origin}/dashboard`);
 }
