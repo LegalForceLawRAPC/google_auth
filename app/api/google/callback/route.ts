@@ -16,7 +16,7 @@ export async function GET(req: NextRequest) {
 
   const { access_token, refresh_token, expires_in } = tokenRes.data;
 
-  // 🔐 Store these securely with your user's Clerk ID
+  // TODO: Store these securely against the authenticated user
   console.log('✅ Gmail Access Token:', access_token);
   console.log('🔁 Gmail Refresh Token:', refresh_token);
 
